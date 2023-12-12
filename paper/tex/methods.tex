@@ -1,0 +1,32 @@
+\section{Methods}\label{sec:methods}
+Our goal is to estimate the likelihood distribution of emission line fluxes given
+parameters of our SPS model: $p(\hat{f}_{\rm e} \given \theta)$. 
+We estimate this likelihood in two complementary ways using a model-driven and
+a data-driven approach.
+
+
+\subsection{SPS Model Driven Estimate}\label{sec:model}
+For the model driven, 
+\begin{equation}\label{eq:model_driven}
+    p(\hat{f}_{\rm e} \given \theta) = \int p(\hat{f}_{\rm e}\given f_{\rm
+    e})\,p(f_{\rm e}\given \theta)\,{\rm d}f_{\rm e}.
+\end{equation} 
+$p(\hat{f}_{\rm e}\given f_{\rm e})$ corresponds to the noise model on the
+emission line fluxes and $p(f_{\rm e}\given \theta)$ corresponds to the
+emission line flux prediction of the SPS model. 
+
+
+\subsection{Data-Driven Estimate}\label{sec:model}
+For the data-driven 
+\begin{equation}\label{eq:data_driven}
+    p(\hat{f}_{\rm e} \given \theta) = \int p(\hat{f}_{\rm e}\given \hat{f}_{\rm
+    c})\,p(\hat{f}_{\rm c}\given \theta)\,{\rm d}f_{\rm c} 
+\end{equation} 
+$p(\hat{f}_{\rm e}\given \hat{f}_{\rm c})$ corresponds to the the distribution
+of emission line fluxes given a galaxy's continuum spectrum. 
+Meanwhile, $p(\hat{f}_{\rm c}\given \theta)$ represents the likelihood of the
+continuum spectrum for a given set of SPS parameters. 
+In practice, we estimate $p(\hat{f}_{\rm e}\given \hat{f}_{\rm c}) \approx
+p(\hat{f}_{\rm e}\given s_{\rm c})$, where $s_{\rm c}$ corresponds to the
+latent representation (compression) of $\hat{f}_{\rm c}$.  
+
